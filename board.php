@@ -42,7 +42,7 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
                 <span><?php echo $body ?></span>
             </div>
         </div>
-        
+        <br>
         <?php endforeach; ?>
     </body>
 </html>

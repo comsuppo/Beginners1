@@ -27,33 +27,30 @@ $result = $db->query("select * from `article` order by `id` desc");
 <html>
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="bbs_style.css">
     </head>
     <body>
         <h1>Beginners BBS</h1>
-        <table border="1">
-            <caption>記事一覧</caption>
-            <tr style="background:#BDBDBD">
-                <th>記事名</th>
-                <th>作成時間</th>
-            </tr>
             <?php foreach($result as $row) : ?>
-            <tr>
-                <?php
-                // XSS対策
-                $id = htmlspecialchars($row['id']);
-                $title = htmlspecialchars($row['title']);
-                $time = htmlspecialchars($row['time']);
-                ?>
-                <td>
+            <?php
+            // XSS対策
+            $id = htmlspecialchars($row['id']);
+            $title = htmlspecialchars($row['title']);
+            $time = htmlspecialchars($row['time']);
+            ?>
+            
+            <div class="link">
+                <span>
                     <form action="board.php" method="post" name="form<?php echo $num ?>">
                         <input type="hidden" value="<?php echo $id ?>" name="article_id" />
                         <a href="#" onclick="document.forms.form<?php echo $num ?>.submit()"><?php echo $title ?></a>
                     </form>
-                </td>
-                <td>
-                    <?php echo $time ?>
-                </td>
-            </tr>
+                </span>
+                <br>
+                <span><?php echo $time ?></span>
+            </div>
+            <br>
+            
             <?php $num += 1; ?>
             <?php endforeach; ?>
         </table>
