@@ -23,6 +23,7 @@ $result = $db->query("select * from `article` order by `id` desc");
 
 ?>
 
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -38,11 +39,14 @@ $result = $db->query("select * from `article` order by `id` desc");
             <?php foreach($result as $row) : ?>
             <tr>
                 <?php
+                // XSS対策
+                $id = htmlspecialchars($row['id']);
                 $title = htmlspecialchars($row['title']);
                 $time = htmlspecialchars($row['time']);
                 ?>
                 <td>
                     <form action="board.php" method="post" name="form<?php echo $num ?>">
+                        <input type="hidden" value="<?php echo $id ?>" name="article_id" />
                         <a href="#" onclick="document.forms.form<?php echo $num ?>.submit()"><?php echo $title ?></a>
                     </form>
                 </td>
