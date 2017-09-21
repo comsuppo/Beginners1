@@ -1,0 +1,24 @@
+.link{
+    color:#222;
+    position: relative;
+    width:60%;
+    padding:5px;
+}
+
+.link a{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    border:2px solid #00171F;
+}
+
+ /* 以下マウスを載せたときのスタイル */
+.link a:hover{
+    color: #222;
+    text-decoration: none;
+    opacity: 0.25;  /* 要素を透明にするタグ */
+    background-color: #E6EBE0;
+}
