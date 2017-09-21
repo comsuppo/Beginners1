@@ -25,6 +25,22 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
         <meta charset="utf-8" />
     </head>
     <body>
+        <h1>
+            <?php
+            $title = htmlspecialchars($_POST['title']);
+            echo $title;
+            ?>
+        </h1>
+        
+        <div>
+            <form action="comment.php" method="post">
+                <input type="hidden" name="title" value="<?php echo $title ?>" />
+                <input type="hidden" name="article_id" value="<?php echo $_POST['article_id'] ?>" />
+                <input type="submit" value="コメントする" />
+            </form>
+        </div>
+        <br>
+        
         <?php foreach($result as $row): ?>
         <?php
         // XSS対策
