@@ -31,28 +31,37 @@ $result = $db->query("select * from `article` order by `id` desc");
     </head>
     <body>
         <h1>Beginners BBS</h1>
-            <?php foreach($result as $row) : ?>
-            <?php
-            // XSS対策
-            $id = htmlspecialchars($row['id']);
-            $title = htmlspecialchars($row['title']);
-            $time = htmlspecialchars($row['time']);
-            ?>
-            
-            <div class="link">
-                <span>
-                    <form action="board.php" method="post" name="form<?php echo $num ?>">
-                        <input type="hidden" value="<?php echo $id ?>" name="article_id" />
-                        <a href="#" onclick="document.forms.form<?php echo $num ?>.submit()"><?php echo $title ?></a>
-                    </form>
-                </span>
-                <br>
-                <span><?php echo $time ?></span>
-            </div>
+        
+        <div>
+            <form action="create_article.php" >
+                <input type="submit" value="新規記事を作成する" />
+            </form>
+        </div>
+        <br>
+        
+        <?php foreach($result as $row) : ?>
+        <?php
+        // XSS対策
+        $id = htmlspecialchars($row['id']);
+        $title = htmlspecialchars($row['title']);
+        $time = htmlspecialchars($row['time']);
+        ?>
+        
+        <div class="link">
+            <span>
+                <form action="board.php" method="post" name="form<?php echo $num ?>">
+                    <input type="hidden" value="<?php echo $id ?>" name="article_id" />
+                    <input type="hidden" value="<?php echo $title ?>" name="title" />
+                    <a href="#" onclick="document.forms.form<?php echo $num ?>.submit()"><?php echo $title ?></a>
+                </form>
+            </span>
             <br>
-            
-            <?php $num += 1; ?>
-            <?php endforeach; ?>
-        </table>
+            <span><?php echo $time ?></span>
+        </div>
+        <br>
+        
+        <?php $num += 1; ?>
+        <?php endforeach; ?>
+        
     </body>
 </html>
