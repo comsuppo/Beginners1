@@ -23,6 +23,7 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
 <html>
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="bbs_style.css">
     </head>
     <body>
         <h1>
@@ -31,6 +32,13 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
             echo $title;
             ?>
         </h1>
+        
+        <div>
+            <form action="article.php">
+                <input type="submit" value="戻る"/>
+            </form>
+        </div>
+        <br>
         
         <div>
             <form action="comment.php" method="post">
@@ -49,7 +57,7 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
         $body = htmlspecialchars($row['body']);
         $time = htmlspecialchars($row['time']);
         ?>
-        <div>
+        <div class="board">
             <div>
                 <span>名前:<?php echo $name ?></span>
                 <span>時間:<?php echo $time ?></span>
@@ -60,5 +68,10 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
         </div>
         <br>
         <?php endforeach; ?>
+        <div>
+            <form action="article.php">
+                <input type="submit" value="戻る"/>
+            </form>
+        </div>
     </body>
 </html>

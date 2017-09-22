@@ -43,6 +43,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 パスワード　：<input type="password" name="password"/><br>
                 <input type="submit" value="作成"/>
             </form>
+        </div><br>
+        <div>
+            <button type="button" onclick="history.back()">戻る</button>
         </div>
     </body>
 </html>

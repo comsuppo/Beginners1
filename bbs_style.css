@@ -22,3 +22,8 @@
     opacity: 0.25;  /* 要素を透明にするタグ */
     background-color: #E6EBE0;
 }
+
+.board{
+	border: 1px solid #000000;
+	width: 60%;
+}
