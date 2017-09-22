@@ -33,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <html>
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="bbs_style.css">
     </head>
     <body>
         <div>

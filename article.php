@@ -47,16 +47,26 @@ $result = $db->query("select * from `article` order by `id` desc");
         $time = htmlspecialchars($row['time']);
         ?>
         
-        <div class="link">
-            <span>
-                <form action="board.php" method="post" name="form<?php echo $num ?>">
-                    <input type="hidden" value="<?php echo $id ?>" name="article_id" />
-                    <input type="hidden" value="<?php echo $title ?>" name="title" />
-                    <a href="#" onclick="document.forms.form<?php echo $num ?>.submit()"><?php echo $title ?></a>
-                </form>
-            </span>
-            <br>
-            <span><?php echo $time ?></span>
+        <div class="waku">
+            <div class="link">
+                <span>
+                    <form action="board.php" method="post" name="form<?php echo $num ?>">
+                        <input type="hidden" value="<?php echo $id ?>" name="article_id" />
+                        <input type="hidden" value="<?php echo $title ?>" name="title" />
+                        <a href="#" onclick="document.forms.form<?php echo $num ?>.submit()"><?php echo $title ?></a>
+                    </form>
+                </span>
+                <br>
+                <span><?php echo $time ?></span>
+            </div>
+            <div class="right">
+                <span>
+                    <form action="delete_article.php" method="post">
+                        <input type="hidden" value="<?php echo $id ?>" name="id" />
+                        <input type="submit" value="削除" />
+                    </form>
+                </span>
+            </div><br>
         </div>
         <br>
         

@@ -1,7 +1,17 @@
+body{
+    margin: 5%;
+}
+
+.waku{
+    border:2px solid #00171F;
+    width: 50%
+}
+
 .link{
     color:#222;
     position: relative;
-    width:60%;
+    width:92%;
+    float: left;
     padding:5px;
 }
 
@@ -12,7 +22,6 @@
     left: 0;
     height:100%;
     width: 100%;
-    border:2px solid #00171F;
 }
 
  /* 以下マウスを載せたときのスタイル */
@@ -21,6 +30,10 @@
     text-decoration: none;
     opacity: 0.25;  /* 要素を透明にするタグ */
     background-color: #E6EBE0;
+}
+
+.right{
+    margin-left:93%;
 }
 
 .board{

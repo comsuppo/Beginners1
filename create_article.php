@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $title = $db->real_escape_string($_POST['title']);
         $password = $db->real_escape_string($_POST['password']);
         
-        $db->query("insert into `article` (`title`, `password`) values ('{$title}', '{$pass}')");
+        $db->query("insert into `article` (`title`, `password`) values ('{$title}', '{$password}')");
         
         header("Location: article.php");
     }
@@ -34,6 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <html>
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="bbs_style.css">
     </head>
     <body>
         <h2>記事作成フォーム</h2>
