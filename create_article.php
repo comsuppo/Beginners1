@@ -35,18 +35,31 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="bbs_style.css">
+        <script type="text/javascript">
+            <!--
+            function checkForm(){
+                if(document.form.title.value == "" ||
+                    document.form.password.value == ""){
+                        alert("すべての項目を入力してください。");
+                        return false;
+                    }
+            }
+            // -->
+        </script>
     </head>
     <body>
         <h2>記事作成フォーム</h2>
         <div>
-            <form method="post">
-                記事タイトル：<input type="text" name="title"/><br>
-                パスワード　：<input type="password" name="password"/><br>
+            <form method="post" name="form" onSubmit="return checkForm();">
+                記事タイトル：<input type="text" name="title" size="30"/><br>
+                パスワード　：<input type="password" name="password" size="30"/><br>
                 <input type="submit" value="作成"/>
             </form>
         </div><br>
         <div>
-            <button type="button" onclick="history.back()">戻る</button>
+            <form action="article.php">
+                <input type="submit" value="戻る"/>
+            </form>
         </div>
     </body>
 </html>

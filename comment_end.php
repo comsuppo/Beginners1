@@ -16,14 +16,13 @@ if($db->connect_error){
 
 // コメント書き込み
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if(!empty($_POST['name']) && !empty($_POST['body']) && !empty($_POST['password']) && !empty($_POST['article_id'])){
+    if(!empty($_POST['name']) && !empty($_POST['body']) && !empty($_POST['article_id'])){
         // SQLインジェクション処理
         $name = $db->real_escape_string($_POST['name']);
         $body = $db->real_escape_string($_POST['body']);
-        $password = $db->real_escape_string($_POST['password']);
         $article_id = $db->real_escape_string($_POST['article_id']);
         
-        $db->query("insert into `comment` (`name`, `body`, `password`, `article_id`) values ('{$name}', '{$body}', '{$password}', '{$article_id}')");
+        $db->query("insert into `comment` (`name`, `body`, `article_id`) values ('{$name}', '{$body}', '{$article_id}')");
     }
 }
 

@@ -45,6 +45,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="bbs_style.css">
+        <script type="text/javascript">
+            <!--
+            function checkForm(){
+                if(document.form.password.value == ""){
+                        alert("パスワードを入力してください。");
+                        return false;
+                    }
+            }
+            // -->
+        </script>
     </head>
     <body>
         <p><?php echo $result_message ?></p>
@@ -61,12 +71,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <span><?php echo $time ?></span>
         </div><br>
         <div>
-            <form action="" method="post">
+            <form name="form" method="post" onSubmit="return checkForm();">
                 <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>" />
-                <input type="password" name="password" />
+                パスワード：<input type="password" name="password" size="30"/>
                 <input type="submit" value="削除"/>
             </form>
         </div>
         <?php endforeach ?>
+        <div>
+            <form action="article.php">
+                <input type="submit" value="戻る"/>
+            </form>
+        </div>
     </body>
 </html>
