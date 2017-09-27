@@ -32,6 +32,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <html>
     <head>
         <meta charset="utf-8" />
+        <title>
+            Beginners BBS -
+            <?php
+            echo $_POST['title'];
+            ?>
+             - コメント投稿完了
+        </title>
         <link rel="stylesheet" type="text/css" href="bbs_style.css">
     </head>
     <body>

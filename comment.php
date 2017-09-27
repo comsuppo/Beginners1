@@ -2,6 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <title>
+            Beginners BBS -
+            <?php
+            echo $_POST['title'];
+            ?>
+             - コメント投稿
+        </title>
         <link rel="stylesheet" type="text/css" href="bbs_style.css">
         <script type="text/javascript">
             <!--

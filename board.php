@@ -23,15 +23,17 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="bbs_style.css">
-    </head>
-    <body>
-        <h1>
+        <title>
+            Beginners BBS -
             <?php
             $title = htmlspecialchars($_POST['title']);
             echo $title;
             ?>
-        </h1>
+        </title>
+        <link rel="stylesheet" type="text/css" href="bbs_style.css">
+    </head>
+    <body>
+        <h1><?php echo $title ?></h1>
         
         <div>
             <form action="article.php">

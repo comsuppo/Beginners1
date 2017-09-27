@@ -19,7 +19,7 @@ if($db->connect_error){
 }
 
 // データベースから降順で読み込み
-$result = $db->query("select * from `article` order by `id` desc");
+$result = $db->query("select * from `article` where `flag` = '0' order by `id` desc");
 
 ?>
 
@@ -27,6 +27,7 @@ $result = $db->query("select * from `article` order by `id` desc");
 <html>
     <head>
         <meta charset="utf-8" />
+        <title>Beginners BBS</title>
         <link rel="stylesheet" type="text/css" href="bbs_style.css">
     </head>
     <body>

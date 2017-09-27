@@ -34,6 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <html>
     <head>
         <meta charset="utf-8" />
+        <title>Beginners BBS - 記事作成</title>
         <link rel="stylesheet" type="text/css" href="bbs_style.css">
         <script type="text/javascript">
             <!--

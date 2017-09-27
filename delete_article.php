@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $id = $db->real_escape_string($_POST['id']);
         $password = $db->real_escape_string($_POST['password']);
         
-        $db->query("delete from `article` where `id` = '$id' and `password` = '$password'");
+        $db->query("update `beginners`.`article` set `flag` = '1' where `id` = '$id'");
         $count = $db->affected_rows;
         if($count == 1){
             header("Location: article.php");
@@ -44,6 +44,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <html>
     <head>
         <meta charset="utf-8" />
+        <title>Beginners BBS - 記事削除</title>
         <link rel="stylesheet" type="text/css" href="bbs_style.css">
         <script type="text/javascript">
             <!--
