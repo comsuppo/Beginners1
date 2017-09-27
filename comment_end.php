@@ -47,6 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <form action="board.php" method="post">
                 <input type="hidden" name="title" value="<?php echo $_POST['title'] ?>" />
                 <input type="hidden" name="article_id" value="<?php echo $_POST['article_id'] ?>" />
+                <input type="hidden" name="description" value="<?php echo $_POST['description'] ?>" />
                 <input type="submit" value="記事へ戻る"/>
             </form>
         </div>

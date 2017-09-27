@@ -36,6 +36,11 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
         <h1><?php echo $title ?></h1>
         
         <div>
+            <?php echo $_POST['description']; ?>
+        </div>
+        <br>
+        
+        <div>
             <form action="article.php">
                 <input type="submit" value="戻る"/>
             </form>
@@ -46,6 +51,7 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
             <form action="comment.php" method="post">
                 <input type="hidden" name="title" value="<?php echo $title ?>" />
                 <input type="hidden" name="article_id" value="<?php echo $_POST['article_id'] ?>" />
+                <input type="hidden" name="description" value="<?php echo $_POST['description'] ?>" />
                 <input type="submit" value="コメントする" />
             </form>
         </div>

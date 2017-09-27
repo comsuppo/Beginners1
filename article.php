@@ -45,6 +45,7 @@ $result = $db->query("select * from `article` where `flag` = '0' order by `id` d
         // XSS対策
         $id = htmlspecialchars($row['id']);
         $title = htmlspecialchars($row['title']);
+        $description = htmlspecialchars($row['description']);
         $time = htmlspecialchars($row['time']);
         ?>
         
@@ -54,6 +55,7 @@ $result = $db->query("select * from `article` where `flag` = '0' order by `id` d
                     <form action="board.php" method="post" name="form<?php echo $num ?>">
                         <input type="hidden" value="<?php echo $id ?>" name="article_id" />
                         <input type="hidden" value="<?php echo $title ?>" name="title" />
+                        <input type="hidden" value="<?php echo $description ?>" name="description" />
                         <a href="#" onclick="document.forms.form<?php echo $num ?>.submit()"><?php echo $title ?></a>
                     </form>
                 </span>

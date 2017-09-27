@@ -21,8 +21,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // SQLインジェクション処理
         $title = $db->real_escape_string($_POST['title']);
         $password = $db->real_escape_string($_POST['password']);
+        $description = $db->real_escape_string($_POST['description']);
         
-        $db->query("insert into `article` (`title`, `password`) values ('{$title}', '{$password}')");
+        $db->query("insert into `article` (`title`, `description`, `password`) values ('{$title}', '{$description}', '{$password}')");
         
         header("Location: article.php");
     }
@@ -40,7 +41,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <!--
             function checkForm(){
                 if(document.form.title.value == "" ||
-                    document.form.password.value == ""){
+                    document.form.password.value == "" ||
+                    document.form.description.value == ""){
                         alert("すべての項目を入力してください。");
                         return false;
                     }
@@ -53,6 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div>
             <form method="post" name="form" onSubmit="return checkForm();">
                 記事タイトル：<input type="text" name="title" size="30"/><br>
+                説明　　　　：<input type="text" name="description" size="30"/><br>
                 パスワード　：<input type="password" name="password" size="30"/><br>
                 <input type="submit" value="作成"/>
             </form>
