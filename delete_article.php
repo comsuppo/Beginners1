@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $id = $db->real_escape_string($_POST['id']);
         $password = $db->real_escape_string($_POST['password']);
         
-        $db->query("update `beginners`.`article` set `flag` = '1' where `id` = '$id'");
+        $db->query("update `beginners`.`article` set `flag` = '1' where `id` = '$id' and `password` = '$password'");
         $count = $db->affected_rows;
         if($count == 1){
             header("Location: article.php");
