@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <span><?php echo $time ?></span>
         </div><br>
         <div>
-            <form name="form" method="post" onSubmit="return checkForm();">
+           <form name="form" method="post" onSubmit="return checkForm();">
                 <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>" />
                 パスワード(30字以内)：<input type="password" name="password" size="30" maxlength=30/>
                 <input type="submit" value="削除"/>
