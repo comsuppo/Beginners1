@@ -53,8 +53,8 @@
                 <input type="hidden" name="title" value="<?php echo $_POST['title'] ?>" />
                 <input type="hidden" name="article_id" value="<?php echo $_POST['article_id'] ?>" />
                 <input type="hidden" name="description" value="<?php echo $_POST['description'] ?>" />
-                名前(30 文字以内)：<input type="text" name="name" style="width:500px" maxlength=30/><br>
-                本文(400文字以内)：<textarea name="body" style="width:500px" rows=5 maxlength=400></textarea><br>
+                名前(30 字以内)：<input type="text" name="name" style="width:500px" maxlength=30/><br>
+                本文(400字以内)：<textarea name="body" style="width:500px" rows=5 maxlength=400></textarea><br>
                 <input type="submit" value="コメント送信" />
             </form>
         </div>
