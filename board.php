@@ -62,7 +62,7 @@ $result = $db->query("select * from `comment` where `article_id` = {$_POST['arti
         // XSS対策
         $id = htmlspecialchars($row['id']);
         $name = htmlspecialchars($row['name']);
-        $body = htmlspecialchars($row['body']);
+        $body = nl2br(htmlspecialchars($row['body']));
         $time = htmlspecialchars($row['time']);
         ?>
         <div class="board">

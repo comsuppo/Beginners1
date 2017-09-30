@@ -45,7 +45,7 @@ $result = $db->query("select * from `article` where `flag` = '0' order by `id` d
         // XSS対策
         $id = htmlspecialchars($row['id']);
         $title = htmlspecialchars($row['title']);
-        $description = htmlspecialchars($row['description']);
+        $description = nl2br(htmlspecialchars($row['description']));
         $time = htmlspecialchars($row['time']);
         ?>
         
