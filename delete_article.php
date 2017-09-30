@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div>
             <form name="form" method="post" onSubmit="return checkForm();">
                 <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>" />
-                パスワード：<input type="password" name="password" size="30"/>
+                パスワード(30字以内)：<input type="password" name="password" size="30" maxlength=30/>
                 <input type="submit" value="削除"/>
             </form>
         </div>

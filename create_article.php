@@ -54,9 +54,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <h2>記事作成フォーム</h2>
         <div>
             <form method="post" name="form" onSubmit="return checkForm();">
-                記事タイトル：<input type="text" name="title" style="width:500px"/><br>
-                説明　　　　：<textarea name="description" style="width:500px" rows=5></textarea><br>
-                パスワード　：<input type="password" name="password" style="width:500px"/><br>
+                記事タイトル(30 字以内)：<input type="text" name="title" style="width:500px" maxlength=30/><br>
+                説明　　　　(400字以内)：<textarea name="description" style="width:500px" rows=5 maxlength=400></textarea><br>
+                パスワード　(30 字以内)：<input type="password" name="password" style="width:500px" maxlength=30/><br>
                 <input type="submit" value="作成"/>
             </form>
         </div><br>
