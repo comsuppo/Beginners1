@@ -28,8 +28,8 @@
                 <input type="hidden" name="title" value="<?php echo $_POST['title'] ?>" />
                 <input type="hidden" name="article_id" value="<?php echo $_POST['article_id'] ?>" />
                 <input type="hidden" name="description" value="<?php echo $_POST['description'] ?>" />
-                名前　　　：<input type="text" name="name" size="30"/><br>
-                本文　　　：<input type="text" name="body" size="30"/><br>
+                名前　　　：<input type="text" name="name" style="width:500px"/><br>
+                本文　　　：<textarea name="body" style="width:500px" rows=5></textarea><br>
                 <input type="submit" value="コメント送信" />
             </form>
         </div>
